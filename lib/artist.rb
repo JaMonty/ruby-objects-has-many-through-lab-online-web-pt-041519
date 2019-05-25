@@ -7,30 +7,23 @@ class Artist
   def initialize(name)
   @name = name
   @@all << self
-end
+  end
 
   def self.all
-    @@all
+      @@all
   end
   
   def new_song(name, genre)
-        song = Song.new(name, self, genre)
-    end 
+      song = Song.new(name, self, genre)
+  end 
 
-   def songs
-        Song.all.select {|song| song.artist == self}
+  def songs
+      Song.all.select {|song| song.artist == self}
+  end
+
+  def genres
+      self.songs.collect(&:genre)
     end
-
-    def genres
-        self.songs.collect(&:genre)
-    end
-    
-    
-    
-  
-
-  
-
 end
  
 
