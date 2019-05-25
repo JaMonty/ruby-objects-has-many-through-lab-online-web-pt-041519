@@ -20,10 +20,4 @@ class Genre
     def artists
         self.songs.collect(&:artist)
     end
-    
-    
-    
-    
-    
-      
 end
